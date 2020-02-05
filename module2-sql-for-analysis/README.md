@@ -67,3 +67,11 @@ skill and is OK if you don't get to it at all), but it is a powerful and
 widely-used web application framework. Also, the Django ORM can connect to a
 variety of SQL backends, and a very typical setup is to use SQLite for (initial)
 local development but PostgreSQL for deployment.
+
+
+```sh
+conda create -n db-env python=3.7
+conda activate db-env
+pip install -r requirements.txt
+#pip install psycopg2 pandas python dot-env
+```
