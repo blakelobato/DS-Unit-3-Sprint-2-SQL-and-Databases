@@ -14,7 +14,7 @@
 # db = client.test
 # print("DB:", type(db))
 
-
+######## MARKDOWN COMMENTARY ##########
 ### "How was working with MongoDB different from working with PostgreSQL? What was easier, and what was harder?"
 # Pros: Felt it was easier to set up and get the links for the Mongo site. The PostgreSQL was a little more issues with me becuase of the install of psycopg2
 # Cons: Felt there are still some difficultiies with linking the databases in the Mongo setting.
