@@ -1,0 +1,61 @@
+### Conda environment
+### pip install pymongo
+### pip install dnspython 
+
+# import pymongo
+
+# connnection_uri = pymongo.MongoClient("mongodb+srv://user456:<password>@cluster0-k9md8.mongodb.net/test?retryWrites=true&w=majority")
+# print("URI:", connection_url)
+
+# client = pymongo.MongoClient(connection_uri)
+# print("CLIENT", type(client), client)
+
+
+# db = client.test
+# print("DB:", type(db))
+
+
+### "How was working with MongoDB different from working with PostgreSQL? What was easier, and what was harder?"
+# Pros: Felt it was easier to set up and get the links for the Mongo site. The PostgreSQL was a little more issues with me becuase of the install of psycopg2
+# Cons: Felt there are still some difficultiies with linking the databases in the Mongo setting.
+
+
+import pymongo
+import os
+from dotenv import load_dotenv
+from datetime import datetime
+
+load_dotenv()
+DB_USER = os.getenv("MONGO_USER", default="OOPS")
+DB_PASSWORD = os.getenv("MONGO_PASSWORD", default="OOPS")
+CLUSTER_NAME = os.getenv("MONGO_CLUSTER_NAME", default="OOPS")
+
+connection_uri = f"mongodb+srv://{DB_USER}:{DB_PASSWORD}@{CLUSTER_NAME}.mongodb.net/test?retryWrites=true&w=majority"
+print("----------------")
+print("URI:", connection_uri)
+
+client = pymongo.MongoClient(connection_uri)
+print("----------------")
+print("CLIENT:", type(client), client)
+
+db = client.test_database
+print("----------------")
+print("DB:", type(db), db)
+
+collection = db.pokemon
+print("----------------")
+print("COLLECTION:", type(collection), collection)
+
+print("----------------")
+print("COLLECTIONS:")
+print(db.list_collection_names())
+collection.insert_one({
+    "name": "Pikachu",
+    "level": 30,
+    "exp": 76000000000,
+    "hp": 400,
+})
+
+
+print(collection.count_documents({}))
+print(collection.count_documents({"name": "Pikachu"}))
