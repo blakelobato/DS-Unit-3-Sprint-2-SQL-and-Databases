@@ -1,0 +1,20 @@
+- In the Northwind database, what is the type of relationship between the
+  `Employee` and `Territory` tables?
+The relationship between employees and territory is many to one. For example, there can be several employeeID to the territoryID. The reason it is many to one is that the connection of several employees to just one territory.
+
+
+
+
+
+
+- What is a situation where a document store (like MongoDB) is appropriate, and
+  what is a situation where it is not appropriate?
+The situation in which it is appropriate to the MongoDB or other document storage is when there is a massive amount of data. Another reason it is needed is to put the data in a useable format that the database tables can connect to one another in a structured format. Times it could be inappropriate is when there is already a well defined database structure and system in an estabilished company or business. 
+
+
+
+
+
+
+- What is "NewSQL", and what is it trying to achieve?
+NewSQL is a database managment platform that provides a scaleable approach to NoSQL while enforcing ACID guarantee. This ACID guarantee helps the database translate to diffferent platforms and systems. 
